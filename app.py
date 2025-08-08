@@ -38,7 +38,7 @@ default_values = {
 
 # Load model and feature names
 def load_model():
-    model_path = 'models/RandomForest_best_model.pkl'
+    model_path = 'RandomForest_best_model.pkl'
     if os.path.exists(model_path):
         return joblib.load(model_path)
     st.error('Model file not found!')
