@@ -71,7 +71,7 @@ if st.sidebar.button('Predict RMSD'):
     # Prepare input for model (polynomial features not handled here)
     input_df = pd.DataFrame([user_input])
     # Use the same scaling as in feature_engineering.py
-    train_df = pd.read_csv('data/protein_clean.csv')
+    train_df = pd.read_csv('protein_clean.csv')
     X_train = train_df[feature_names]
     scaler = StandardScaler()
     poly = PolynomialFeatures(degree=2, include_bias=False)
