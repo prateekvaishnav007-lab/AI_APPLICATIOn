@@ -97,22 +97,3 @@ if st.sidebar.button('Predict RMSD'):
         # else:
         #     st.info('SHAP explainability is only available for tree-based models.')
 
-st.header('Dashboard')
-eda_dir = 'outputs/eda_visuals'
-if os.path.exists(eda_dir):
-    eda_imgs = [f for f in os.listdir(eda_dir) if f.endswith('.png')]
-    for img in sorted(eda_imgs):
-        st.subheader(img.replace('_', ' ').replace('.png', '').title())
-        st.image(os.path.join(eda_dir, img), use_container_width=True)
-
-st.header('Model Performance')
-perf_path = 'outputs/model_performance.csv'
-if os.path.exists(perf_path):
-    perf_df = pd.read_csv(perf_path, index_col=0)
-    st.dataframe(perf_df)
-
-st.header('Feature Importances')
-fi_path = 'outputs/feature_importance.csv'
-if os.path.exists(fi_path):
-    fi_df = pd.read_csv(fi_path)
-    st.dataframe(fi_df.head(20))
