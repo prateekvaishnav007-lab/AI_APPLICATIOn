@@ -1,0 +1,35 @@
+Model Interpretation Notes
+=========================
+
+1. Linear Regression:
+   - Baseline model for regression tasks.
+   - Achieved MSE=23.54, R²=0.35 on the sample data.
+   - Performance is lower than tree-based models, indicating non-linear relationships in the data.
+
+2. Random Forest:
+   - Best performing model (MSE=22.30, R²=0.39).
+   - Handles non-linearities and feature interactions well.
+   - Robust to outliers and overfitting due to ensemble averaging.
+   - Saved as the best model for deployment.
+
+3. Gradient Boosting:
+   - MSE=28.58, R²=0.21.
+   - Slightly underperforms compared to Random Forest and XGBoost, possibly due to low n_estimators for speed.
+   - Can be improved with more trees and hyperparameter tuning.
+
+4. LightGBM:
+   - MSE=25.80, R²=0.29.
+   - Fast and efficient, but slightly less accurate than Random Forest and XGBoost on this sample.
+   - May benefit from more trees and parameter tuning.
+
+5. XGBoost:
+   - MSE=22.56, R²=0.38.
+   - Comparable to Random Forest, confirming the value of boosting for this regression task.
+   - Efficient and scalable, suitable for larger datasets.
+
+General Insights:
+-----------------
+- Tree-based models (Random Forest, XGBoost) outperform linear models, suggesting complex, non-linear relationships in the data.
+- All models benefit from feature engineering and scaling.
+- Further improvements can be made with more data, more trees, and hyperparameter tuning.
+- Model selection should consider both accuracy and inference speed for deployment.

@@ -1,0 +1,26 @@
+EDA Interpretation Notes
+=======================
+
+1. Summary Statistics:
+   - The dataset contains 44,019 rows and 10 columns (after cleaning).
+   - All features are real-valued and on different scales.
+   - No missing values are present in the cleaned data.
+
+2. Feature Distributions:
+   - Most features show a right-skewed distribution, indicating the presence of outliers or a long tail.
+   - Some features (e.g., F3, F4) are fractional and bounded between 0 and 1.
+   - The target variable (RMSD) is continuous and also right-skewed, with most values concentrated at the lower end.
+
+3. Correlation Heatmap:
+   - Several features are moderately to highly correlated (e.g., F1, F2, F5).
+   - High correlation between features may indicate redundancy and the need for dimensionality reduction or feature selection.
+   - RMSD shows moderate correlation with F1, F2, and F5, suggesting these features are important predictors.
+
+4. RMSD Distribution:
+   - The RMSD values are mostly low, with a few high outliers.
+   - Predicting high RMSD values may be more challenging due to their rarity.
+
+5. Recommendations:
+   - Consider scaling features before modeling due to different value ranges.
+   - Investigate highly correlated features for possible removal or transformation.
+   - Outlier handling may improve model robustness.
